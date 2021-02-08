@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c3p0-config>
+    <!--写默认的配置信息-->
+    <!--如果要研究某个xml中可以设置什么属性，就找相关类的  属性  或者   setXxx()-->
+    <default-config>
+        <property name="user">root</property>
+        <property name="password">123</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/blog</property>
+        <property name="checkoutTimeout">30000</property><!--单位毫秒，如果30秒内还没连接，就超时了-->
+    </default-config>
+    <!--自己命名的配置信息，如果使用时没找到，就使用默认的-->
+    <named-config name="bin23">
+        <property name="user">root</property>
+        <property name="password">123</property>
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/blog</property>
+        <property name="checkoutTimeout">20000</property>
+    </named-config>
+</c3p0-config>
