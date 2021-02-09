@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.bin23.dao"></context:component-scan>
+
+
+    <!-- 配置数据库相关  -->
+    <bean id="dataSource"  class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_demo_db"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123"></property>
+        <property name="maxTotal" value="10"></property>
+        <property name="maxIdle" value="6"></property>
+    </bean>
+
+    <!-- 配置事务管理器tManager -->
+    <bean id="tManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource"  ref="dataSource"></property>
+    </bean>
+
+    <!--增加对事务的支持-->
+    <tx:annotation-driven transaction-manager="tManager"></tx:annotation-driven>
+
+
+
+
+    <bean id="student" class="com.bin23.entity.Student">
+        <!--通过setXxx的方式注入值-->
+        <property name="stuNo" value="1"></property>
+        <property name="stuName" value="lebron"></property>
+        <property name="stuAge" value="23"></property>
+    </bean>
+
+    <bean id="javaCourse" class="com.bin23.entity.JavaCourse"></bean>
+
+    <bean id="hadoopCourse" class="com.bin23.entity.HadoopCourse"></bean>
+
+    <bean id="teacher" class="com.bin23.entity.Teacher">
+        <!--通过构造方法注入值-->
+        <constructor-arg value="1"></constructor-arg>
+        <constructor-arg value="MissK"></constructor-arg>
+    </bean>
+
+
+    <bean id="course" class="com.bin23.entity.Course">
+        <!--
+        <property name="courseId" value="1"></property>
+        <property name="courseName" value="Hadoop"></property>
+        <property name="teacher" ref="teacher"></property>
+        -->
+        <constructor-arg value="1" type="int"></constructor-arg>
+        <constructor-arg value="Java" type="java.lang.String"></constructor-arg>
+        <!--类中属性是对象（引用）类型，则使用ref，不是value-->
+        <constructor-arg ref="teacher" type="com.bin23.entity.Teacher"></constructor-arg>
+        <!-- 关于<constructor-arg>标签中的属性
+            <constructor-arg value="" name="" type="" ref="" index=""></constructor-arg>
+            value：直接赋值
+            name：指的是构造方法中的形参名
+            type：指的是构造方法中的形参类型
+            ref：专门用于写对象类型，即非基本类型+String
+            index：指构造方法中的第index个参数
+        -->
+    </bean>
+
+    <!-- 通过p命名空间注入值
+    <bean id="course" class="com.bin23.entity.Course"  p:teacher-ref="teacher"  p:courseId="300" p:courseName="hadoop" >
+    </bean>
+    -->
+
+    <!--注入集合，以setXxx方式，同理构造方法也一样，只是使用constructor-arg标签-->
+    <bean id="collectionDemo" class="com.bin23.entity.AllTypeCollection">
+        <property name="listElem">
+            <list>
+                <value>篮球</value>
+                <value>橄榄球</value>
+            </list>
+        </property>
+        <property name="setElem">
+            <set>
+                <value>刺客信条</value>
+                <value>侠盗猎车</value>
+                <value>古墓丽影</value>
+            </set>
+        </property>
+        <property name="mapElem">
+            <map>
+                <entry>
+                    <key>
+                        <value>1</value>
+                    </key>
+                    <value>百度地图</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>2</value>
+                    </key>
+                    <value>腾讯地图</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>3</value>
+                    </key>
+                    <value>高德地图</value>
+                </entry>
+            </map>
+        </property>
+        <property name="arrayElem">
+            <array>
+                <value>我爱你</value>
+                <value>我的数组</value>
+            </array>
+        </property>
+        <property name="propsElement">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="courseAuto" class="com.bin23.entity.Course" autowire="byName">
+        <property name="courseId" value="2"></property>
+        <property name="courseName" value="HadoopAuto"></property>
+        <!--
+        <property name="teacher" ref="teacher"></property>
+        -->
+    </bean>
+
+    <context:component-scan base-package="com.bin23.service.impl"></context:component-scan>
+
+    <bean id="studentDaoImpl" class="com.bin23.dao.impl.StudentDaoImpl"></bean>
+    <!--
+    <bean id="studentService" class="com.bin23.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDaoImpl"></property>
+    </bean>
+    -->
+    <!--配置前置通知-->
+    <!--刚好上面已经配过addStudent()所在的那个类了，已经加入到IOC容器中了-->
+    <bean id="logBefore" class="com.bin23.aop.LogBefore"></bean>
+    <!--
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    -->
+    <aop:config>
+
+        <!-- 配置切入点，切入点的id，切入点方法的表达式（在哪里执行通知 ） -->
+        <aop:pointcut
+                id="pointcut1"
+                expression="execution(public void com.bin23.service.impl.StudentServiceImpl.addStudent(..))"/>
+        <!-- 配置切入点与通知类的关系，让通知类知道切入到哪里-->
+        <aop:advisor advice-ref="logBefore" pointcut-ref="pointcut1"></aop:advisor>
+    </aop:config>
+
+    <!--配置后置通知-->
+    <bean id="logAfterReturning" class="com.bin23.aop.LogAfterReturning"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pointcut2" expression="execution(public void com.bin23.service.impl.StudentServiceImpl.addStudent(..))"/>
+        <aop:advisor advice-ref="logAfterReturning" pointcut-ref="pointcut2"></aop:advisor>
+    </aop:config>
+
+    <!--配置异常通知-->
+    <bean id="logException" class="com.bin23.aop.LogException"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pointcut3" expression="execution(public void com.bin23.service.impl.StudentServiceImpl.deleteStudentByNo(..))"/>
+        <aop:advisor advice-ref="logException" pointcut-ref="pointcut3"></aop:advisor>
+    </aop:config>
+
+    <!--配置环绕通知-->
+    <bean id="logAround" class="com.bin23.aop.LogAround"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pointcut4" expression="execution(public void com.bin23.service.impl.StudentServiceImpl.addStudent(..))"/>
+        <aop:advisor advice-ref="logAround" pointcut-ref="pointcut4"></aop:advisor>
+    </aop:config>
+
+    <!--开启对于注解的支持，自动代理-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <!--扫描下使用注解的那个类，即LogAnnotation类-->
+    <context:component-scan base-package="com.bin23.aop"></context:component-scan>
+
+    <bean id="logSchema" class="com.bin23.aop.LogSchema"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pointcut5" expression="execution(public void com.bin23.service.impl.StudentServiceImpl.addStudent(..))"/>
+        <aop:aspect ref="logSchema">
+            <aop:before method="beforeAdvisor" pointcut-ref="pointcut5"></aop:before>
+            <aop:after-returning method="afterReturningAdvisor" pointcut-ref="pointcut5" returning="returningValue"></aop:after-returning>
+            <aop:after-throwing method="asThrowingAdvisor" pointcut-ref="pointcut5"></aop:after-throwing>
+            <aop:around method="aroundAdvisor" pointcut-ref="pointcut5"></aop:around>
+            <aop:after method="afterAdvisor" pointcut-ref="pointcut5"></aop:after>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
