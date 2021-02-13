@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:content="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描注解形式的类，使其加入IOC，即@Controller，控制器-->
+    <context:component-scan base-package="com.bin23.handler"></context:component-scan>
+
+    <!--配置视图解析器 InternalResourceViewResolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <mvc:view-controller path="noNeedController" view-name="success"></mvc:view-controller>
+    <mvc:annotation-driven ></mvc:annotation-driven>
+
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
+
+    <bean id="myConverter" class="com.bin23.converter.MyConverter"></bean>
+
+    <!--将myConverter再纳入 SpringMVC 提供的转换器Bean-->
+    <bean id="conversionService"  class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myConverter"/>
+            </set>
+        </property>
+    </bean>
+    <!--需要annotation-driven支持-->
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+
+    <!--配置 数据格式化 所依赖的bean-->
+    <bean id="formattingConversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+    </bean>
+
+    <!--配置 文件上传 相关-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!--104,857,600 1024b * 1024 = 1M, 1024 * 1024 *100 = 100M那样子，限制100MB-->
+        <property name="maxUploadSize" value="104857600"></property>
+    </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <content:interceptor>
+            <content:mapping path="/**"/>
+<!--            <content:exclude-mapping path="/css/**"/>-->
+<!--            <content:exclude-mapping path="/js/**"/>-->
+<!--            <content:exclude-mapping path="/fonts/**"/>-->
+            <bean class="com.bin23.interceptor.MyInterceptor"></bean>
+        </content:interceptor>
+        <content:interceptor>
+            <content:mapping path="/**"/>
+            <bean class="com.bin23.interceptor.MyInterceptor2"></bean>
+        </content:interceptor>
+    </mvc:interceptors>
+</beans>

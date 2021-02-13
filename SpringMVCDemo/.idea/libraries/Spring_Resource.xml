@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Spring-Resource">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/resource/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-aop-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-beans-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-context-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-core-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-expression-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-webmvc-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/spring-web-4.3.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/servlet-api.jar!/" />
+      <root url="file://$PROJECT_DIR$/src/resource" />
+      <root url="jar://$PROJECT_DIR$/src/resource/jackson-annotations-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/jackson-core-2.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/resource/jackson-databind-2.9.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/src/resource" recursive="false" />
+  </library>
+</component>
