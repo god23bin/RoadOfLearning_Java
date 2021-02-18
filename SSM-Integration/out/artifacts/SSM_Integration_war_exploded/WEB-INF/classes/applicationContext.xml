@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+    <!--加载配置文件-->
+    <bean id="loadProperties" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="locations">
+            <array>
+                <value>classpath:db.properties</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--配置数据库相关-数据源（之前是在conf.xml里配置，现在交由Spring来配置）-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="${driver}"></property>
+        <property name="url" value="${url}"></property>
+        <property name="username" value="${username}"></property>
+        <property name="password" value="${password}"></property>
+        <property name="maxTotal" value="${maxTotal}"></property>
+        <property name="maxIdle" value="${maxIdle}"></property>
+    </bean>
+
+    <!--配置MyBatis的核心类，SqlSessionFactory-->
+    <!--数据源  mapper.xml 全交给这个bean来配置了 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- 无需conf.xml了
+        <property name="configLocation" value="conf.xml"></property>
+        -->
+        <!--直接加载mapper.xml-->
+        <property name="mapperLocations">
+            <array>
+                <value>com/bin23/mapper/*.xml</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--
+        第三种方式获取 Mapper，批量生产Mappers
+        产生的mapper在IOC中默认id为接口名
+        而且属性名不再是sqlSessionFactory而是sqlSessionFactoryBeanName
+        返回值是String，不是引用类型，所以注入是使用value
+    -->
+    <bean id="mappers" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--通过其mapperInterface属性，告知该实现类为某个接口的实现类-->
+        <property name="basePackage" value="com.bin23.mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!--Service加入IOC容器，同时注入Mapper-->
+    <bean id="userInfoService" class="com.bin23.service.impl.UserInfoServiceImpl">
+        <property name="userInfoMapper" ref="userInfoMapper"></property>
+    </bean>
+
+</beans>
