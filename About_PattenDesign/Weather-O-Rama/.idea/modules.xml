@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Weather-O-Rama.iml" filepath="$PROJECT_DIR$/Weather-O-Rama.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WeatherWithJavaSupport/WeatherWithJavaSupport.iml" filepath="$PROJECT_DIR$/WeatherWithJavaSupport/WeatherWithJavaSupport.iml" />
+    </modules>
+  </component>
+</project>
