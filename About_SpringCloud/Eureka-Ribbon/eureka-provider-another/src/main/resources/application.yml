@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: eureka-provider-another
+
+server:
+  port: 7007
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+  instance:
+    hostname: localhost
+
+

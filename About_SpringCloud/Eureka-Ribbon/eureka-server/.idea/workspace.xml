@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da554203-c8e6-440b-96d3-c89c75cb8437" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\SoftWare\Maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../Maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\SoftWare\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iAT4f9ZJUEAPGrcCf2wu7YYIkz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="F:/About_Git/WorkSpace_Gitee/LocalRepositoryAfterReinstallSystem" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bin23.eurekaribbonclient" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bin23.eurekaprovideranother" />
+      <recent name="com.bin23.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaProviderApplication">
+    <configuration name="EurekaConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaconsumer.EurekaConsumerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaProviderAnotherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-provider-another" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaprovideranother.EurekaProviderAnotherApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaprovider.EurekaProviderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaRibbonClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-ribbon-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaribbonclient.EurekaRibbonClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerAnotherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-server-another" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaserveranother.EurekaServerAnotherApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bin23.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da554203-c8e6-440b-96d3-c89c75cb8437" name="Default Changelist" comment="" />
+      <created>1601349206536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601349206536</updated>
+      <workItem from="1601349212813" duration="15516000" />
+      <workItem from="1601610802285" duration="1535000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="483" y="280" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601360476088">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="483" y="280" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1601360476088" />
+    <state x="227" y="232" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1601360488975">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="227" y="232" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1601360488975" />
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.0.center" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.0.left" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601394671553" />
+    <state width="1323" height="168" key="GridCell.Tab.0.right" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.1.bottom" timestamp="1601394671555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601394671555" />
+    <state width="1323" height="168" key="GridCell.Tab.1.center" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.1.left" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.1.right" timestamp="1601394671554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601394671554" />
+    <state width="1323" height="168" key="GridCell.Tab.2.bottom" timestamp="1601394671555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601394671555" />
+    <state width="1323" height="168" key="GridCell.Tab.2.center" timestamp="1601394671555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601394671555" />
+    <state width="1323" height="168" key="GridCell.Tab.2.left" timestamp="1601394671555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601394671555" />
+    <state width="1323" height="168" key="GridCell.Tab.2.right" timestamp="1601394671555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="168" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601394671555" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1601349448235">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601349448235" />
+    <state x="339" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1601610806728">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1601610806728" />
+    <state x="67" y="65" key="new project wizard" timestamp="1601352551799">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="67" y="65" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1601352551799" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601383927880">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601383927880" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>396</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>963</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="unregister">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>868</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="register">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>886</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="renew">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>929</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="shutdown">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>1294</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="initScheduledTasks">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$MAVEN_REPOSITORY$/com/netflix/eureka/eureka-client/1.9.25/eureka-client-1.9.25-sources.jar!/com/netflix/discovery/DiscoveryClient.java</url>
+          <line>322</line>
+          <properties class="com.netflix.discovery.DiscoveryClient" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
