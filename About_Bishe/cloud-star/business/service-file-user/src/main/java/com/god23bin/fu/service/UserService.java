@@ -1,6 +1,6 @@
 package com.god23bin.fu.service;
 
-import com.god23bin.fu.entity.User;
+import com.god23bin.commonbase.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -2,8 +2,8 @@ package com.god23bin.fu.controller;
 
 
 import com.god23bin.commonutils.Result;
-import com.god23bin.fu.entity.TNode;
-import com.god23bin.fu.entity.UserDirectory;
+import com.god23bin.commonbase.entity.TNode;
+import com.god23bin.commonbase.entity.UserDirectory;
 import com.god23bin.fu.service.UserDirectoryService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

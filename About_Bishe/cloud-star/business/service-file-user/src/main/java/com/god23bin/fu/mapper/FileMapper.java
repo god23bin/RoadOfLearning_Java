@@ -1,6 +1,6 @@
 package com.god23bin.fu.mapper;
 
-import com.god23bin.fu.entity.File;
+import com.god23bin.commonbase.entity.File;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 

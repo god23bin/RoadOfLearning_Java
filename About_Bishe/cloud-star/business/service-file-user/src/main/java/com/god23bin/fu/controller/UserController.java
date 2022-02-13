@@ -2,7 +2,7 @@ package com.god23bin.fu.controller;
 
 
 import com.god23bin.commonutils.Result;
-import com.god23bin.fu.entity.User;
+import com.god23bin.commonbase.entity.User;
 import com.god23bin.fu.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

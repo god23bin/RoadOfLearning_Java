@@ -1,6 +1,6 @@
 package com.god23bin.fu.service.impl;
 
-import com.god23bin.fu.entity.User;
+import com.god23bin.commonbase.entity.User;
 import com.god23bin.fu.mapper.UserMapper;
 import com.god23bin.fu.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

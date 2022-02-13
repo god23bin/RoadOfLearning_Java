@@ -1,7 +1,7 @@
 package com.god23bin.fu.utils;
 
 import com.god23bin.commonbase.exception.DiyException;
-import com.god23bin.fu.entity.TNode;
+import com.god23bin.commonbase.entity.TNode;
 
 import java.util.ArrayList;
 import java.util.HashSet;

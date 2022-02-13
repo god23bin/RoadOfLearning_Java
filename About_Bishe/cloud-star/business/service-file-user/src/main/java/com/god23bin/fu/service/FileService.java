@@ -1,8 +1,8 @@
 package com.god23bin.fu.service;
 
-import com.god23bin.fu.entity.File;
+import com.god23bin.commonbase.entity.File;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.god23bin.fu.entity.TNode;
+import com.god23bin.commonbase.entity.TNode;
 
 import java.util.List;
 

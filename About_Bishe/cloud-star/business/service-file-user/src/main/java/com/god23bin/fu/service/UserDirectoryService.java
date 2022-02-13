@@ -1,9 +1,9 @@
 package com.god23bin.fu.service;
 
-import com.god23bin.fu.entity.TNode;
-import com.god23bin.fu.entity.UserDirectory;
+import com.god23bin.commonbase.entity.TNode;
+import com.god23bin.commonbase.entity.UserDirectory;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.god23bin.fu.entity.vo.FolderVo;
+import com.god23bin.commonbase.entity.vo.FolderVo;
 
 /**
  * <p>

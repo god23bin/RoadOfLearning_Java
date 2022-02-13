@@ -1,8 +1,8 @@
 package com.god23bin.fu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.god23bin.fu.entity.File;
-import com.god23bin.fu.entity.TNode;
+import com.god23bin.commonbase.entity.File;
+import com.god23bin.commonbase.entity.TNode;
 import com.god23bin.fu.mapper.FileMapper;
 import com.god23bin.fu.service.FileService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
