@@ -1,0 +1,25 @@
+server:
+  port: 8002
+
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud_star?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  # 返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+# 对接OSS需要知道的几个固定值
+aliyun:
+  oss:
+    file:
+      endpoint: oss-cn-shenzhen.aliyuncs.com
+      access-key-id: LTAI5tNt5PVHe2GZ217qE3Fp
+      access-key-secret: jDVf9PvjxPQoLBhVy4tIybKR1QUGBS
+      file-host: xxx
+      bucket-name: file-test-23-bucket
