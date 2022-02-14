@@ -11,24 +11,24 @@ public interface OssService {
 
     /**
      * 上传头像到OSS
-     * @param file 头像文件
+     * @param multipartFile 头像文件
      * @return
      */
-    String uploadAvatar(MultipartFile file);
+    String uploadAvatar(MultipartFile multipartFile);
 
     /**
      * 上传文件到OSS
-     * @param file 要传入的文件
+     * @param multipartFile 要传入的文件
      * @param catalog 要传入的文件所属文件夹
      * @return
      */
-    File uploadFile(MultipartFile file, String catalog);
+    File uploadFile(MultipartFile multipartFile, String catalog);
 
     /**
-     * 删除文件
-     * @param id
+     * 根据文件ID删除文件
+     * @param fileId
      * @return
      */
-    boolean deleteFile(String id);
+    boolean deleteFile(String fileId);
 
 }
