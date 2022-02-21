@@ -20,11 +20,4 @@ spring:
 
 
 # 对接OSS需要知道的几个固定值
-aliyun:
-  oss:
-    file:
-      endpoint: oss-cn-shenzhen.aliyuncs.com
-      access-key-id: LTAI5tNt5PVHe2GZ217qE3Fp
-      access-key-secret: jDVf9PvjxPQoLBhVy4tIybKR1QUGBS
-      file-host: xxx
-      bucket-name: file-test-23-bucket
+
