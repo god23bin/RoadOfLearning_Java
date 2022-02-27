@@ -19,6 +19,7 @@ import java.util.Map;
  * @author god23bin
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/vod/file")
 public class VodController {
 
