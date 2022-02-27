@@ -25,6 +25,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Vod 服务（业务）实现
+ * 1. 上传音视频文件
+ * 2. 删除阿里云音视频文件
+ * 3. 根据阿里云音视频ID获取对应的播放地址
+ * @author god23bin
+ */
 @Service
 public class VodServiceImpl implements VodService {
 

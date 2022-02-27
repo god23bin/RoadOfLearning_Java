@@ -5,6 +5,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Vod 服务（业务）
+ * @author god23bin
+ */
 public interface VodService {
 
     /**
