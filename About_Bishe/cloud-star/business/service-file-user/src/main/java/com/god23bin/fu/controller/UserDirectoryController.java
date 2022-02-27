@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.*;
  * @since 2022-01-24
  */
 @RestController
-@RequestMapping("/user-directory")
+@CrossOrigin
+@RequestMapping("/fu/user-directory")
 public class UserDirectoryController {
 
     @Autowired

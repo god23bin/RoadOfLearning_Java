@@ -19,7 +19,8 @@ import java.util.List;
  * @since 2022-01-24
  */
 @RestController
-@RequestMapping("/file")
+@CrossOrigin
+@RequestMapping("/fu/file")
 public class FileController {
 
     @Autowired
