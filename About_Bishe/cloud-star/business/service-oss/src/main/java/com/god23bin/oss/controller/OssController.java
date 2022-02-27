@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @author god23bin
  */
 @RestController
+@CrossOrigin
 @RequestMapping("/oss/file")
 public class OssController {
 
@@ -62,7 +63,7 @@ public class OssController {
      */
     @ApiOperation(value = "上传文件（包括音视频文件和其他文件）到OSS，传入文件 multipartFile、用户ID、文件夹目录路径Catalog")
     @PostMapping("upload/{userId}")
-    public Result uploadFile(MultipartFile multipartFile, @PathVariable String userId, @RequestParam String catalog) {
+    public Result uploadFile(@RequestParam("file") MultipartFile multipartFile, @PathVariable String userId, @RequestParam String catalog) {
         // 获取全文件名 勒布朗扣篮.jpg
         String filename = multipartFile.getOriginalFilename();
         // 勒布朗扣篮
