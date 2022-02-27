@@ -32,11 +32,11 @@ public class OssServiceImpl implements OssService {
     /**
      * 上传头像到OSS
      *
-     * @param file
+     * @param multipartFile
      * @return
      */
     @Override
-    public String uploadAvatar(MultipartFile file) {
+    public String uploadAvatar(MultipartFile multipartFile) {
         String endpoint = utilOfOss.getEndpoint();
         String accessKeyId = utilOfOss.getAccessKeyId();
         String accessKeySecret = utilOfOss.getAccessKeySecret();
@@ -49,9 +49,9 @@ public class OssServiceImpl implements OssService {
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
         try {
             // 2. 获取上传文件的输入流
-            InputStream inputStream = file.getInputStream();
+            InputStream inputStream = multipartFile.getInputStream();
             // 3. 获取全文件名（即包含后缀） xxx.jpg
-            String originalFilename = file.getOriginalFilename();
+            String originalFilename = multipartFile.getOriginalFilename();
 
             // 为了把文件按照日期进行分类，那么需要有日期
             // 所以构建日期路径
@@ -80,28 +80,28 @@ public class OssServiceImpl implements OssService {
     /**
      * 上传文件到OSS
      *
-     * @param file
+     * @param multipartFile
      * @param catalog
      * @return
      */
     @Override
-    public File uploadFile(MultipartFile file, String catalog) {
+    public File uploadFile(MultipartFile multipartFile, String catalog) {
         String endpoint = utilOfOss.getEndpoint();
         String accessKeyId = utilOfOss.getAccessKeyId();
         String accessKeySecret = utilOfOss.getAccessKeySecret();
         String fileHost = utilOfOss.getFileHost();
         String bucketName = utilOfOss.getBucketName();
 
-        File file1 = new File();
+        File file = new File();
         String uploadUrl = null;
 
         // 1. 创建OSS客户端实例
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
         try {
             // 2. 获取上传文件的输入流
-            InputStream inputStream = file.getInputStream();
+            InputStream inputStream = multipartFile.getInputStream();
             // 3. 获取全文件名（即包含后缀） 比如：勒布朗扣篮.jpg
-            String originalFilename = file.getOriginalFilename();
+            String originalFilename = multipartFile.getOriginalFilename();
 
             // 从 originalFilename 截取文件名、文件类型
             // 勒布朗扣篮
@@ -116,7 +116,7 @@ public class OssServiceImpl implements OssService {
                     || "pcd".equals(type)|| "dxf".equals(type)|| "ufo".equals(type)|| "eps".equals(type)|| "ai".equals(type)|| "raw".equals(type)
                     || "WMF".equals(type)|| "webp".equals(type)|| "avif".equals(type)) {
                 // 文件类别设置为image
-                file1.setFileSort("image");
+                file.setFileSort("image");
             }
 
             // 为了把文件按照日期进行分类，那么需要有日期
@@ -133,38 +133,38 @@ public class OssServiceImpl implements OssService {
             // https://edu-guli-1010.oss-cn-beijing.aliyuncs.com/01.jpg
             uploadUrl = "https://" + bucketName + "." + endpoint + "/" + originalFilename;
 
-            file1.setName(filename);
-            file1.setType(fileType);
-            file1.setUrl(uploadUrl);
-            file1.setFDir(catalog);
-            file1.setSize(file.getSize());
+            file.setName(filename);
+            file.setType(fileType);
+            file.setUrl(uploadUrl);
+            file.setFDir(catalog);
+            file.setSize(multipartFile.getSize());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
             // 关闭OSSClient。
             ossClient.shutdown();
         }
-        return file1;
+        return file;
     }
 
 
     /**
-     * 删除文件
-     *
-     * @param id
+     * 根据文件ID删除文件
+     * 逻辑：删除数据库中的记录 + 删除阿里云OSS上的文件
+     * @param fileId
      * @return
      */
     @Override
-    public boolean deleteFile(String id) {
+    public boolean deleteFile(String fileId) {
         String endpoint = utilOfOss.getEndpoint();
         String accessKeyId = utilOfOss.getAccessKeyId();
         String accessKeySecret = utilOfOss.getAccessKeySecret();
         String fileHost = utilOfOss.getFileHost();
         String bucketName = utilOfOss.getBucketName();
         // 直接删除数据库中的记录
-        File file = fileMapper.selectById(id);
+        File file = fileMapper.selectById(fileId);
         String name = file.getName();
-        int i = fileMapper.deleteById(id);
+        int i = fileMapper.deleteById(fileId);
         if (i == 0) {
             return false;
         }
