@@ -35,8 +35,8 @@ import java.util.Map;
 @Service
 public class VodServiceImpl implements VodService {
 
-    private static final String ACCESS_KEY_ID = "LTAI5tNt5PVHe2GZ217qE3Fp";
-    private static final String ACCESS_KEY_SECRET = "jDVf9PvjxPQoLBhVy4tIybKR1QUGBS";
+    private static final String ACCESS_KEY_ID = "";
+    private static final String ACCESS_KEY_SECRET = "";
 
 //    @Autowired
 //    UtilOfVod utilOfVod;
